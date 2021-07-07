@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/mainstyle.css" />
+    <title>AVA</title>
+  </head>
+  <body>
+    <h1 class="onboarding-heading">AVA</h1>
+    <section class="onboarding">
+      <div class="onboarding-slide">
+        <div class="onboarding-slider">
+          <img src="/img/pins/del-map-app.jpg" alt="" />
+          <div class="onboarding-text text1">Fast Affordable & Reliable</div>
+        </div>
+        <div class="onboarding-slider">
+          <img src="/img/pins/Business analysis.jpg" alt="" />
+          <div class="onboarding-text text1">Fast Affordable & Reliable</div>
+        </div>
+        <div class="onboarding-slider">
+          <img src="/img/pins/Breakfast.jpg" alt="" />
+          <div class="onboarding-text text1">Fast Affordable & Reliable</div>
+        </div>
+        <div class="onboarding-slider">
+          <img src="/img/pins/del-map-app.jpg" alt="" />
+          <div class="onboarding-text text1">Fast Affordable & Reliable</div>
+        </div>
+      </div>
+      <div class="onboarding-indicator">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <button class="btn btn-primary" id="onboardnext" >Next</button>
+    </section>
+
+    <script>
+      // slider
+      var slide = document.getElementsByClassName("onboarding-slide")[0];
+      var k = slide.children[0].clientWidth;
+      // slider-indicator
+      var slideindicator = document.getElementsByClassName("onboarding-indicator")[0];
+      var slideindicatorchild = slideindicator.children;
+      var onboardbutton = document.getElementById("onboardnext")
+
+      var onboardposition= 1; 
+      var onboardnext = ()=>{
+        console.log("hi")
+        if(onboardposition < 4){
+          // onboarding-slider
+
+            slide.children[onboardposition-1].style.left = "-100vw";
+            slide.children[onboardposition].style.left = "0";
+            
+          // onboarding-indicator
+          slideindicatorchild[onboardposition-1].classList.remove("active")
+          slideindicatorchild[onboardposition].classList.add("active")
+
+            onboardposition+=1;
+            // console.log(onboardposition)
+            
+        }
+        
+        if(onboardposition===5){
+          window.location.href="/login"
+        }
+        if(onboardposition=== 4){
+          onboardbutton.innerText = "Continue"
+          onboardposition= 5;
+        }
+      };
+      document.getElementById("onboardnext").addEventListener("click", onboardnext)
+    </script>
+  </body>
+</html>
