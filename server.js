@@ -13,14 +13,17 @@ var public = path.join(__dirname, "/public/");
 app.get("/", (req, res) => {
   res.sendfile(public + "/index.html");
 });
-app.get("/home", (req, res) => {
-  res.sendFile(public + "html/home.html");
-});
 app.get("/login", (req, res) => {
   res.sendFile(public + "html/login.html");
 });
 app.get("/signup", (req, res) => {
   res.sendFile(public + "html/signup.html");
+});
+app.get("/home", (req, res) => {
+  res.sendFile(public + "html/home.html");
+});
+app.get("/send", (req, res) => {
+  res.sendFile(public + "html/send.html");
 });
 app.get("/product", (req, res) => {
   res.sendFile(public + "/product.html");

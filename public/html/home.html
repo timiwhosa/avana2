@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/mainstyle.css" />
   </head>
   <body>
-    <div class="home-general">
+    <div class="vertical-scroll">
       <section class="home-nav">
         <ul>
           <li><a href="/home">AVA</a></li>
@@ -30,7 +30,7 @@
         <div class="home-main-main">
           <div class="section-heading"><h3>Would Love To:</h3></div>
           <div class="section-ctn">
-            <div class="section-ctn-ctn">
+            <div class="section-ctn-ctn" onclick="redirecttosend()">
               <img src="/img/pins/del-map-app.jpg" alt="">
               <p>Send Item</p>
             </div>
@@ -54,5 +54,11 @@
         </div>
       </section>
     </div>
+
+    <script>
+      function redirecttosend(){
+        window.location.href="/send"
+      }
+    </script>
   </body>
 </html>
