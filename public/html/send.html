@@ -310,13 +310,14 @@
               <div class="send">
                 <div class="flex">
                   <button type="button" class="btn btn-cancel" onclick="closecontsub()">x</button>
-                  <button class="btn btn-primary">Next</button>
+                  <button class="btn btn-primary" onclick="showadditionalInfo()">Next</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
+        <div class="cover"></div>
         <div class="cover"></div>
         <div class="overlay volume">
           <div>Dimension/ volume:</div>
@@ -493,6 +494,21 @@
           </div>
         </div>
 
+        <div class="overlay others additional-info">
+          <p class="b">Additional Services (optional)</p>
+          <div class="additional-services">
+            <div class="">Fragile</div>
+            <div class="">Liguid</div>
+            <div class="">Liguid</div>
+            <div class="">Perishable</div>
+            <div class="">Perishable</div>
+          </div>
+          <div class="flex">
+            <button type="button" class="btn btn-prev" onclick="hideadditionalInfo()"> < prev </button>
+            <button class="btn btn-primary fs-20" onclick="savedropoff()">Save & continue</button>
+          </div>
+        </div>
+        <!-- PICKUP AND DROP-OFF DIV -->
         <div class="location-div" id="location-from">
           <div class="">
             <div class="inline">
@@ -516,7 +532,7 @@
                   required
                 />
                 <input
-                  type="text"
+                  type="number"
                   name=""
                   id="from-number"
                   placeholder="Phone: (Required)"
@@ -552,7 +568,7 @@
                   required
                 />
                 <input
-                  type="text"
+                  type="number"
                   name=""
                   id="to-number"
                   placeholder="Phone: (Required)"
@@ -567,8 +583,11 @@
         <script type="text/javascript">
           var contsub = document.getElementsByClassName("cont-sub")[0];
           var cover = document.getElementsByClassName("cover")[0];
+          var cover2 = document.getElementsByClassName("cover")[1];
           var volume = document.getElementsByClassName("volume")[0];
           var others = document.getElementsByClassName("others")[0];
+          var others2 = document.getElementsByClassName("others")[1];
+          var additionalInfo= document.getElementsByClassName("additional-info")[0];
           var locationDivfrom = document.getElementById("location-from");
           var locationDivto = document.getElementById("location-to");
 
@@ -590,12 +609,24 @@
             cover.style.backgroundColor = "var(--bsh)";
             volume.style.top = "25%";
             volume.style.display = "block";
+            volume.style.padding = "20px";
+            volume.style.height = "auto";
           }
           function showothers() {
             cover.style.zIndex = 99999999;
             cover.style.backgroundColor = "var(--bsh)";
             others.style.bottom = "0";
+            others.style.minHeight = "60vh";
+            others.style.padding = "20px";
           }
+          function showadditionalInfo(){
+            cover2.style.zIndex = 9999999999;
+            cover2.style.backgroundColor = "var(--bsh)";
+            additionalInfo.style.bottom = "0";
+            additionalInfo.style.minHeight = "60vh";
+            additionalInfo.style.padding = "26px 20px";
+          }
+          
 
           // location from
           function showlocationfromdiv(data) {
@@ -627,12 +658,29 @@
             cover.style.zIndex = -1;
             cover.style.backgroundColor = "transparent";
             volume.style.top = "100vh";
+            volume.style.padding = "0";
+            volume.style.height = "0";
             others.style.bottom = "-100vh";
+            others.style.minHeight = "0";
+            others.style.padding = "0";
+          }
+          function hideadditionalInfo(){
+            cover2.style.zIndex = -1;
+            cover2.style.backgroundColor = "transparent";
+            additionalInfo.style.bottom = "-100vh";
+            additionalInfo.style.minHeight = "0";
+            additionalInfo.style.padding = "0";
           }
 
+          function savedropoff(){
+            hideadditionalInfo();
+            closecontsub();
+          }
           cover.addEventListener("click", () => {
             hidevolume();
           });
+
+          cover2.addEventListener("click", hideadditionalInfo);          
 
           function redirecttoHome() {
             window.location.href = "/home";

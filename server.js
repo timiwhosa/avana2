@@ -25,6 +25,9 @@ app.get("/home", (req, res) => {
 app.get("/send", (req, res) => {
   res.sendFile(public + "html/send.html");
 });
+app.get("/chat", (req, res) => {
+  res.sendFile(public + "html/chat.html");
+});
 app.get("/product", (req, res) => {
   res.sendFile(public + "/product.html");
 });

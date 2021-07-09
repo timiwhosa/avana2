@@ -19,13 +19,13 @@ html {
     padding: 0;
     margin: 0;
     height: 100vh;
-    overflow: hidden;
+    /* overflow: hidden; */
     scroll-behavior: smooth;
 }
 body{
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 img{
@@ -52,9 +52,18 @@ li{
 .b{
     font-weight: 600;
 }
-
 /* Custom classes */
-
+.menu-3dot{
+    display: grid;
+    grid-gap: 4px;
+}
+.menu-3dot span{
+    display: block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: var(--btnblvck);
+}
 .flex {
 display: flex;
 align-items: center;
@@ -76,15 +85,34 @@ width: 100%;
     /* Buttons */
 .btn{
     border-radius: 8px;
+    white-space: nowrap;
+    cursor:pointer;
 }
 .btn-center{
     display: block;
     margin: 0 auto;
 }
+.btn-back{
+    font-size: 25px;
+    -webkit-text-stroke-width: thick;
+}
 .btn-cancel{
     border: 2px solid var(--bsh);
     font-size: 25px;
     padding: 5px 15px;
+    margin-right: 10px;
+    background-color: var(--white);
+    height: 40px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    color: var(--btnblvck);
+}
+.btn-prev{
+    border: 2px solid var(--bsh);
+    font-size: 16px;
+    font-weight: 600;
+    padding: 5px 10px;
     margin-right: 10px;
     background-color: var(--white);
     height: 40px;
@@ -99,7 +127,7 @@ width: 100%;
     font-weight: 600;
     width: 70vw;
     min-width: 150px;
-    height: 40px;
+    height: 45px;
     box-shadow: 5px 5px 25px var(--bsh);
     font-size: 25px;
     border: none;
@@ -176,6 +204,14 @@ form .error-info{
     overflow: hidden;
     box-shadow: 5px 5px 10px var(--bsh);
     margin-right: 10px;
+}
+
+.profile-img-small{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px var(--bsh);
 }
 .profile-img img{
     object-fit: cover;
@@ -561,6 +597,7 @@ font-size: 16px;
     z-index: 9999999999;
     height: 0;
     transition: all ease-in-out .6s;
+    overflow: hidden;
 }
 .cover {
 width: 100vw;
@@ -578,7 +615,7 @@ transition: all ease-in-out 0.6s;
 top: 100vh;
 position: absolute;
 /* top: 25%; */
-padding: 20px;
+/* padding: 20px; */
 font-size: 18px;
 width: 100vw;
 }
@@ -616,11 +653,10 @@ font-size: 16px;
 /* top: 100vh; */
 position: absolute;
 bottom: -100vh;
-padding: 20px;
+/* padding: 20px; */
 font-size: 18px;
 width: 100vw;
 border-radius: 50px 50px 0 0;
-min-height: 60vh;
 }
 .others > div:nth-child(1) input {
 width: 100%;
@@ -734,4 +770,123 @@ margin: 10px auto;
     font-size: 18px;
     font-weight: 600;
     margin-top: 20px;
+    margin-bottom: 70px;
+}
+.additional-info{
+    position: absolute;
+}
+.additional-services{
+    display: flex;
+    flex-flow: wrap;
+    padding: 20px 0;
+}
+.additional-services div{
+    width: fit-content;
+    padding: 5px 10px;
+    margin: 0 5px 10px 0;
+    border: .5px solid var(--border);
+    border-radius: 8px;
+}
+.additional-services .active{
+    border: 1px solid rgb(37, 172, 37);
+}
+.additional-info .flex{
+    position: absolute;
+    bottom: 20px;
+    max-width: 86vw;
+}
+
+/* CHAT SECTION */
+.chat{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.chat-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50px;
+    box-shadow: 0 5px 10px var(--bsh);
+    background-color: var(--white);
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    align-items: center;
+    z-index: 99;
+}
+.chat-body{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 1;
+    padding: 70px 20px 50px ;
+    background-color: #fafafa;
+    overflow-y: scroll;
+}
+.chat-body .chat-ctn{
+    display: grid;
+    grid-gap: 10px;
+    margin: 0 0 20px 0;
+}
+.chat-body .chat-ctn >div:nth-child(1) img{
+    object-fit: cover;
+    height: 100%;
+}
+.chat-body .chat-ctn >div:nth-child(1){
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+}
+.chat-body .chat-ctn >div:nth-child(1) >div:nth-child(1){
+    margin-right: 20px;
+}
+.chat-body .chat-ctn >div:nth-child(2){
+    font-size: 16px;
+    padding: 10px 20px;
+    box-shadow: 0 0 5px var(--bsh);
+    max-width: 80vw;
+}
+.chat-body .chat-ava >div:nth-child(2){
+    background-color: var(--blvck);
+    color: var(--white);
+    border-radius: 0 20px 20px 20px;
+}
+
+.chat-body .chat-customer{
+    justify-items: right;
+}
+.chat-body .chat-customer >div:nth-child(2){
+    background-color: var(--white);
+    color: var(--blvck);
+    border-radius: 20px 0 20px 20px;
+}
+
+.chat-box{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 50px;
+    background-color: var(--white);
+    box-shadow: 0 0 5px var(--bsh);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 20px;
+    z-index: 99;
+}
+.chat-box textarea{
+    height: 35px;
+    border: none;
+    background-color: #f6f6f6;
+    border-radius: 100px;
+    padding: 10px;
+}
+/* OVERRIDE CLASSES */
+
+.fs-20{
+    font-size: 20px;
 }
