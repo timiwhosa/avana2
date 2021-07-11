@@ -19,7 +19,8 @@ html {
     padding: 0;
     margin: 0;
     height: 100vh;
-    /* overflow: hidden; */
+    width: 100vw;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 body{
@@ -798,7 +799,7 @@ margin: 10px auto;
 
 /* CHAT SECTION */
 .chat{
-    position: relative;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -866,7 +867,7 @@ margin: 10px auto;
 }
 
 .chat-box{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100vw;
     height: 50px;
