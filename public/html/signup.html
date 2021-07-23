@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ava || Signup</title>
-    <link rel="stylesheet" href="./css/mainstyle.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3nyty || Signup</title>
+    <link rel="stylesheet" href="./css/mainstyle.css" />
+  </head>
+  <body>
     <div class="vertical-scroll">
-        <p class="setaccount">
-            Setup <br/> Account
-        </p>
+      <p class="setaccount">
+        Setup <br />
+        Account
+      </p>
 
-        <form action="">
-            <p>Name</p>
-            <input type="text" name="" id="signup-name" class="input input-medium" required placeholder="Surname Firstname">
-            <p>Phone Number</p>
-            <input type="number" name="" id="signup-phone" class="input input-medium" required placeholder="0903 543 XXXX">
-            <p>Email</p>
-            <input type="email" name="" id="signup-email" class="input input-medium" required placeholder="ava@ava.com">
-            <p>Password</p>
-            <input type="password" name="" id="signup-password" class="input input-medium" required placeholder="XXXXXXXXX">
-            <span class="error-info">lorem ipsum is wrong</span>
-            <span><a href="/login">Login</a></span>
-            <div class="inline">
-            <button type="button" class="btn btn-cancel" onclick="redirecttologin()">x</button>
-                <button type="submit" class="btn btn-primary btn-center">Register</button>
-            </div>
-            
-        </form>
+      <form action="">
+        <p>Name</p>
+        <input
+          type="text"
+          name=""
+          id="signup-name"
+          class="input input-medium"
+          required
+          placeholder="Surname Firstname"
+        />
+        <p>Phone Number</p>
+        <input
+          type="number"
+          name=""
+          id="signup-phone"
+          class="input input-medium"
+          required
+          placeholder="0903 543 XXXX"
+        />
+        <p>Email</p>
+        <input
+          type="email"
+          name=""
+          id="signup-email"
+          class="input input-medium"
+          required
+          placeholder="3nyty@3nyty.com"
+        />
+        <p>Password</p>
+        <input
+          type="password"
+          name=""
+          id="signup-password"
+          class="input input-medium"
+          required
+          placeholder="XXXXXXXXX"
+        />
+        <span class="error-info">lorem ipsum is wrong</span>
+        <span><a href="/login">Login</a></span>
+        <div class="inline">
+          <button
+            type="button"
+            class="btn btn-cancel"
+            onclick="redirecttologin()"
+          >
+            x
+          </button>
+          <button type="submit" class="btn btn-primary btn-center">
+            Register
+          </button>
+        </div>
+      </form>
     </div>
 
     <script>
-        function redirecttologin(){
-            window.location.href='/login'
-        }
+      function redirecttologin() {
+        window.location.href = "/login";
+      }
     </script>
-</body>
+  </body>
 </html>
